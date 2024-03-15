@@ -9,9 +9,11 @@ require 'Database.php';
 
 // connect to mySQL database
 
-$db = new Database();
+$config = require('config.php');
 
-$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+$db = new Database($config['database']);
+
+$posts = $db->query("select * from posts")->fetchAll();
 
 
 foreach ($posts as $post) {
