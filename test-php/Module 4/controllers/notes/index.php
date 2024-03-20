@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 // connect to mySQL database
 
 $config = require base_path('config.php');
